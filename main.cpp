@@ -130,7 +130,7 @@ void addStudent(Node* &head, Node* temp, Node* temp2, Node* current, char* infna
       current->setNext(temp);
     }
     //If the current's gpa is smaller than the inid and the next node is larger
-    if (current->getStudent()->getid() < inid && current->getNext()->getStudent()->getid() > inid) {
+    else if (current->getStudent()->getid() < inid && current->getNext()->getStudent()->getid() > inid) {
       //Put newStudent in between the nodes
       Node* tempstudent = new Node(newStudent);
       tempstudent->setStudent(newStudent);
@@ -139,7 +139,7 @@ void addStudent(Node* &head, Node* temp, Node* temp2, Node* current, char* infna
       tempstudent->setNext(temp);
     }
     //If both the current and the next node's ID is smaller than the inid
-    if (current->getStudent()->getid() < inid && current->getNext()->getStudent()->getid() < inid) {
+    else if (current->getStudent()->getid() < inid && current->getNext()->getStudent()->getid() < inid) {
       //Call the function again and move forward one node
       addStudent(head, temp, temp2, current->getNext(), infname, inlname, inid, ingpa);
     }
